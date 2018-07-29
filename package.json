@@ -1,0 +1,93 @@
+{
+  "name": "@guyl/react-components",
+  "version": "0.1.0",
+  "description": "React Components Library",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "browser": "dist/bundle.umd.js",
+  "files": [
+    "dist",
+    "README"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "BABEL_ENV=umd rollup --c rollup.config.js",
+    "eslint:fix": "eslint --fix --quiet ./",
+    "start": "start-storybook -p 9001 -c .storybook",
+    "test": "jest --watchAll",
+    "prepare": "npm run build",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx}": [
+      "eslint --fix --cache ./",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "pre-commit": "precommit",
+  "keywords": [
+    "React",
+    "styled-components",
+    "Jest",
+    "Rollup",
+    "Babel"
+  ],
+  "author": "Guy Livni <guylivni@gmail.com> (https://github.com/guylivni)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guylivni/react-components.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-runtime": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^5.0.1",
+    "@storybook/addon-actions": "^5.0.1",
+    "@storybook/addon-centered": "^5.0.1",
+    "@storybook/addon-info": "^5.0.1",
+    "@storybook/addon-knobs": "^5.0.1",
+    "@storybook/addon-links": "^5.0.1",
+    "@storybook/addon-options": "^5.0.1",
+    "@storybook/addon-storysource": "^5.0.1",
+    "@storybook/addons": "^5.0.1",
+    "@storybook/react": "^5.0.1",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.10.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^22.3.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.9.1",
+    "jest": "^24.4.0",
+    "jest-axe": "^3.1.1",
+    "jest-enzyme": "^7.0.0",
+    "jest-styled-components": "^6.3.1",
+    "lint-staged": "^8.1.5",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.14.0",
+    "react-test-renderer": "^16.8.4",
+    "rollup": "^1.6.0",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-babel-minify": "^8.0.0",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-filesize": "^6.0.1",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-progress": "^1.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-url": "^2.0.1"
+  }
+}
